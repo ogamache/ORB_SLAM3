@@ -162,6 +162,20 @@ if(realsense2_FOUND)
     target_link_libraries(rgbd_inertial_realsense_D435i ${PROJECT_NAME})
 endif()
 
+# Stereo fomo
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Main/stereo)
+
+add_executable(stereo_fomo
+        Main/stereo/stereo_fomo.cc)
+target_link_libraries(stereo_fomo ${PROJECT_NAME})
+
+# Mono fomo
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Main/mono)
+
+add_executable(mono_fomo
+        Main/mono/mono_fomo.cc)
+target_link_libraries(mono_fomo ${PROJECT_NAME})
+
 #Stereo examples
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Examples/Stereo)
 
